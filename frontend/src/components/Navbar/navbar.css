@@ -1,0 +1,46 @@
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 1em;
+    z-index: 999;
+    box-shadow: rgba(17, 17, 26, 0.3) 0px 1px 0px;
+}
+
+header .top_header {
+    background: white;
+    backdrop-filter: blur(5px);
+    padding: 0.9em 0;
+}
+
+header .top_header nav ul li {
+    display: inline-block;
+    margin-right: 1.5em;
+}
+
+header .top_header .dropdown-menu li {
+    width: 100%;
+}
+
+header .top_header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header .top_header nav ul li a {
+    color: #090909;
+    font-size: 0.95em;
+}
+
+.header-height {
+    height: 87px;
+}
+
+
+/* header end */
+/* responsive */
+@media (max-width: 767px) {
+    .desktop_nav {
+        display: none;
+    }
+}
