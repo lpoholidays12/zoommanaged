@@ -1,0 +1,43 @@
+
+.logo {
+    position: absolute;
+    left: 42%;
+    top:60px;
+}
+
+.bgColor {
+    z-index: 2;
+    position: relative;
+    background-color: #212121;
+    color: white;
+    height:100vh;
+}
+
+.signup-form{
+    position: relative;
+    z-index: 6;
+    top: 150px;
+    left: 28%;
+    background-color: #212121;
+    color: white;
+}
+
+.text-secondary{
+    z-index: 6;
+
+    text-align: center;
+}
+
+.btnDiv{
+    z-index: 6;
+
+    position: relative;
+    left: 35%;
+}
+
+.btn{  
+    z-index: 8;
+    background-color: #01579B;
+    color: white;
+    width:25%;
+}
