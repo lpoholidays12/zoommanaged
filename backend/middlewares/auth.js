@@ -1,13 +1,15 @@
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config()
 
-const secretKey = "ThisisSecretKey";
+
 
 const verifyJwt = (req, res, next) => {
   const token = req.headers["access-token"];
   if (!token) {
     return res.json("we need token please provide it for next time")
   } else {
-    jwt.verify(token, secretKey, (err, decoded) => {
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
       if (err) {
         res.json("Not Authenticated")
       } else {

@@ -3,8 +3,7 @@ import md5 from "md5";
 import cors from "cors";
 import db from "./controllers/database.js"
 import axios from "axios";
-import jwt from "jsonwebtoken"
-
+import jwt from "jsonwebtoken";
 import {verifyJwt, createJwt} from "./middlewares/auth.js"
 
 
@@ -17,8 +16,6 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors())
 
 const port = process.env.PORT || 5000
-
-const secretKey = "ThisisSecretKey";
 
 app.post("/login", async function (req, res) {
 

@@ -1,14 +1,16 @@
 import mysql from "mysql2";
+import dotenv from "dotenv";
+dotenv.config()
+
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'lpo@123',
-    database:'zoomdatasets',
+    host: '184.168.114.114',
+    user: process.env.SQL_USER,
+    password: process.env.SQL_PASS,
+    database:'zoom-uat',
     waitForConnections: true,
     connectionLimit:20,
     queueLimit:0,
-
 })
 
 export default pool.promise()
