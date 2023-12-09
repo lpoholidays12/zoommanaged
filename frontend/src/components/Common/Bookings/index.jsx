@@ -1,8 +1,28 @@
+// import { useEffect } from 'react';
+// import axios from "./axios";
 import Navbar from '../../Navbar';
 import './bookings.css';
 import { FaUserEdit } from "react-icons/fa";
 
+
 const Bookings = () => {
+  
+  // const [bookingData, setBookingData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/bookingData")
+  //     .then(response => {
+  //       // Set the data in state
+  //       setBookingData(response.data);
+  //     })
+  //     .catch(error => {
+  //       // Handle errors here
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []); // Dependency array is empty to ensure the effect runs only once on component mount
+
+
+
   const bookingData = [
     { 
       bookingNo: 1,
