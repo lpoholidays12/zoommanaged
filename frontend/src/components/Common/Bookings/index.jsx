@@ -1,6 +1,5 @@
 // import { useEffect } from 'react';
-// import axios from "./axios";
-import Navbar from '../../Navbar';
+// import axios from "./axios"; 
 import './bookings.css';
 import { FaUserEdit } from "react-icons/fa";
 
@@ -52,38 +51,37 @@ const Bookings = () => {
 
   const isSales = false;
 
-  return (
-    <div>
-      <Navbar />
-      <div className='table-template-section mb-4'>
-        <table>
-          <thead className="tableHeader">
-            <tr>
-              <th>Booking No.</th>
-              <th>Name</th>
-              <th>Package</th>
-              <th>Date</th>
-              {!isSales && <th>Edit</th>}
-            </tr>
-          </thead>
-          <tbody id="customer_data_table">
-            {bookingData.map((booking) => (
-              <tr key={booking.bookingNo}>
-                <td>{booking.bookingNo}</td>
-                <td>{booking.name}</td>
-                <td>{booking.package}</td>
-                <td>{booking.date}</td>
-                {!isSales && (
-                  <td>
-                    <a href="/"><FaUserEdit /> </a>
-                  </td>
-                )}
+  return ( 
+     <section className='container'>
+        <div className='table-template-section mb-4'>
+          <table>
+            <thead className="tableHeader">
+              <tr>
+                <th>Booking No.</th>
+                <th>Name</th>
+                <th>Package</th>
+                <th>Date</th>
+                {!isSales && <th>Edit</th>}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+            </thead>
+            <tbody>
+              {bookingData.map((booking) => (
+                <tr key={booking.bookingNo}>
+                  <td>{booking.bookingNo}</td>
+                  <td>{booking.name}</td>
+                  <td>{booking.package}</td>
+                  <td>{booking.date}</td>
+                  {!isSales && (
+                    <td>
+                      <a href="/"><FaUserEdit /> </a>
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div> 
+     </section>
   );
 };
 

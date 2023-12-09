@@ -1,6 +1,4 @@
-import './navbar.css';
-
-
+import './navbar.css'; 
 
 const Navbar = () => {
     return (
@@ -9,7 +7,7 @@ const Navbar = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <a href="/index.html">
+                            <a href="/">
                                 <img
                                     src="/images/logo.png"
                                     width="150px"
