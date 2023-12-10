@@ -1,27 +1,26 @@
-import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
-dotenv.config()
+import jwt from "jsonwebtoken"
 
-
+const secretKey = "YourSecretKey";
 
 const verifyJwt = (req, res, next) => {
-  const token = req.headers["access-token"];
-  if (!token) {
-    return res.json("we need token please provide it for next time")
-  } else {
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
-      if (err) {
-        res.json("Not Authenticated")
-      } else {
-        req.userid = decoded.password;
-        next()
-      }
-    })
-  }
-}
+  const token = req.headers["authorization"];
 
-const createJwt = (password) => {
-  const token = jwt.sign({ data: password }, secretKey, { expiresIn: 60 * 60 })
+  if (!token) {
+    return res.sendStatus(400);
+  }
+
+  jwt.verify(token.replace("Bearer ", ""), secretKey, (err) => {
+    if (err) {
+      return res.sendStatus(401);
+    }
+    next();
+  });
+};
+
+
+
+const createJwt = (username) => {
+  const token = jwt.sign({ user: username }, secretKey, { expiresIn: 60 * 60 })
   return token
 }
 

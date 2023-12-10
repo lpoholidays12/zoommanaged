@@ -1,0 +1,12 @@
+GET http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "userid": "Ramesh",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:5000/sales
+Authorization: Bearer hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUmFtZXNoIiwiaWF0IjoxNzAyMjQ0MzM3LCJleHAiOjE3MDIyNDc5Mzd9.Q6FRPe7jJ6FM8WyounNBvGkl7pp_sXJBdOtScLlNuQo
