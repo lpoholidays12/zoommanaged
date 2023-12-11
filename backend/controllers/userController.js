@@ -1,13 +1,6 @@
-import  db from './database.js';
-import jwt from 'jsonwebtoken';
+import  db from './dbController.js';
 import md5 from 'md5';
-
 import { createJwt } from '../middlewares/auth.js';
-
-// const createToken = (_id) => { 
-//     return jwt.sign({_id},process.env.SECRET,{expiresIn:'3d'})
-// } 
-
 
 const loginUser = async (req, res) => {
     var userid = req.body.userid;

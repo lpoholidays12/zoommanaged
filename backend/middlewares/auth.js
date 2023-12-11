@@ -1,6 +1,6 @@
-import jwt from "jsonwebtoken"
-
-const secretKey = "YourSecretKey";
+import dotenv from "dotenv";
+dotenv.config()
+import jwt from "jsonwebtoken";
 
 const verifyJwt = (req, res, next) => {
   const token = req.headers["authorization"];
@@ -9,7 +9,7 @@ const verifyJwt = (req, res, next) => {
     return res.sendStatus(400);
   }
 
-  jwt.verify(token.replace("Bearer ", ""), secretKey, (err) => {
+  jwt.verify(token.replace("Bearer ", ""), process.env.SECRET_KEY, (err) => {
     if (err) {
       return res.sendStatus(401);
     }
@@ -17,10 +17,8 @@ const verifyJwt = (req, res, next) => {
   });
 };
 
-
-
 const createJwt = (username) => {
-  const token = jwt.sign({ user: username }, secretKey, { expiresIn: 60 * 60 })
+  const token = jwt.sign({ user: username }, process.env.SECRET_KEY, { expiresIn: 60 * 60 })
   return token
 }
 

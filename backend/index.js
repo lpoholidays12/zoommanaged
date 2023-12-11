@@ -1,11 +1,6 @@
-import dotenv from "dotenv";
-dotenv.config()
 import express from "express";
-
 import cors from "cors";
-import db from "./controllers/database.js"
-
-import {verifyJwt, createJwt} from "./middlewares/auth.js"
+import db from "./controllers/dbController.js"
 import userRoutes from "./routes/user.js";
 import salesRoutes from "./routes/sales.js"
 
@@ -18,29 +13,6 @@ const port = process.env.PORT || 5000
 
 app.use('/api/sales', salesRoutes);
 app.use('/api/user', userRoutes);
-
-// app.get("/sales", verifyJwt, async function (req, res) {
-//   var packageData = await db.query(`SELECT * from packages`);
-
-//   const packages = packageData[0].reduce((result, packageItem) => {
-//     const packageType = packageItem.package_type;
-
-//     result[packageType] = result[packageType] || [];
-
-//     // Push the package to the array
-//     result[packageType].push(packageItem);
-
-//     return result;
-//   }, {});
-
-//   res.json({ packages })
-
-// })
-
-// app.get("/packages", verifyJwt, async function (req, res) {
-//   var packages = await db.query(`SELECT * FROM packages`)
-//   res.json({ Tours: packages[0] });
-// })
 
 app.get("/subPackage", async function (req, res) {
   var subPackage = await db.query(`SELECT * FROM sub_package`)
