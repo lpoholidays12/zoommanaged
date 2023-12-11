@@ -6,16 +6,22 @@ const loginUser = async (req, res) => {
     var userid = req.body.userid;
   var password = md5(req.body.password);
 
-  var existinguser = await db.query("Select password, department_id from employees where name='" + userid + "'")
+  var existinguser = await db.query("Select employee_id, password, department_id from employees where name='" + userid + "'")
 
   if (existinguser[0][0] == undefined) {
     return res.json({status:"404",message:"User not found"})
   }
   else {
     if (password === existinguser[0][0].password) {
-      const token = createJwt(userid);
+      
       var department = await db.query("Select name from departments where department_id='" + existinguser[0][0].department_id + "'")
-      res.json({ Login: true, token: token,data: department[0][0].name })
+      const user = {
+        employee_id: existinguser[0][0].employee_id,
+        name: userid,
+        department : department[0][0].name,
+      }
+      const token = createJwt(user);
+      res.json({ Login: true, token: token })
     } else {
       res.json({Value: true, status:"401",message:"Unauthorize Access: Password didnt match"});
     }
