@@ -21,7 +21,7 @@ const loginUser = async (req, res) => {
         department: department[0][0].name,
       }
       const token = createJwt(user);
-      res.json({ Login: true, token: token })
+      res.json({ Login: true, token: token, user:user })
     } else {
       res.json({ Value: true, status: "401", message: "Unauthorize Access: Password didnt match" });
     }
