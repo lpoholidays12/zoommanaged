@@ -1,0 +1,118 @@
+.centered-div {
+  width: 1000px; /* Adjust the width as needed */
+  max-width: 1200px; /* Set a maximum width if desired */
+  margin: 5% auto; /* Center the div horizontally */
+  padding: 20px; /* Add padding for better visibility */
+  box-sizing: border-box; /* Include padding in the total width */
+  background-color: aqua;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.Avatar {
+  margin: 10px;
+  border-radius: 90px;
+  float: left;
+  
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+/* .paragraph-container {
+  text-align: center; /* Align the paragraphs in the center horizontally */
+/* }  */
+
+.paragraph1 {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.paragraph2 {
+  display: inline-block;
+  /* margin-left:100px;  */
+}
+
+.paragraph3 {
+  display: inline-block;
+  /* padding: 100px;  */
+}
+
+.paragraph4 {
+  display: inline-block;
+  /* margin-left:100px;  */
+}
+
+.div-container {
+ border-spacing: 5px; /* Align the divs in the center horizontally */
+}
+
+.inline-block-div {
+  display: inline-block;
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  background-color: #e0e0e0;
+  margin: 0 px; /* Add margin for spacing between divs */
+}
+
+
+.Details {
+  margin-left: 20px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center; /* Align items vertically at the center */
+}
+
+.image {
+  border-radius: 100px;
+  width: 200px; /* Adjust the image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add margin to the right of the image for spacing */
+}
+
+.flex-div {
+  background-color: aqua;
+  margin-top: 25px;
+  margin-left:80px;
+  width: 400px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  /* background-color: #e0e0e0; */
+}
+
+.subheading {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+  margin-bottom: 10px; /* Add margin at the bottom for spacing */
+}
+
+.subheading2 {
+  font-size: 1rem; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+  margin-bottom: 10px; /* Add margin at the bottom for spacing */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  gap: 1rem; /* Adjust the gap as needed */
+}
+
+.grid-item {
+  padding: 2rem;
+  border: 1px solid #ccc;
+}
+

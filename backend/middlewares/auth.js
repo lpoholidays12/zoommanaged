@@ -17,6 +17,7 @@ const verifyJwt = (req, res, next) => {
   });
 };
 
+
 const createJwt = (username) => {
   const token = jwt.sign({ user: username }, process.env.SECRET_KEY, { expiresIn: 60 * 60 })
   return token
