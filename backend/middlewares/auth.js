@@ -9,7 +9,7 @@ const verifyJwt = (req, res, next) => {
     return res.sendStatus(400);
   }
 
-  jwt.verify(token.replace("Bearer ", ""), process.env.SECRET_KEY , (err) => {
+  jwt.verify(token.replace("Bearer ", ""), process.env.SECRET_KEY , (err, data) => {
     if (err) {
       return res.sendStatus(401);
     }
