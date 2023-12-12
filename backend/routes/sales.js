@@ -1,12 +1,15 @@
 import express from "express"
 
 import {verifyJwt} from "../middlewares/auth.js"
-import  { getAllPackages } from "../controllers/salesController.js" 
+import  { getPackages,getPackage } from "../controllers/salesController.js" 
 
 const router = express.Router();
 
 router.use(verifyJwt);
 
-router.get("/package", getAllPackages);
+router.get("/package", getPackages);
+
+router.get('/package/:id', getPackage)
+
 
 export default router

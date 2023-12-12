@@ -1,7 +1,7 @@
 import db from "./dbController.js"
 
 
-const getAllPackages = async (req, res) => {
+const getPackages = async (req, res) => {
   var packageLists = []
   var packageData = await db.query(`SELECT * from packages`);
   for(let i = 0; i < packageData[0].length; i++){
@@ -17,4 +17,12 @@ const getAllPackages = async (req, res) => {
   res.json({ packages:packageData[0] })
 }
 
-export {getAllPackages}
+const getPackage = async (req, res) => {
+  const { id } = req.params
+
+  var packageData = await db.query(`SELECT * from sub_package where subPkg_id=`+id);
+  
+  res.status(200).json(packageData[0])
+}
+
+export {getPackages,getPackage}
