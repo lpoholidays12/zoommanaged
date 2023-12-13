@@ -1,6 +1,4 @@
-import style from './packageCards.module.scss';
-
-
+import style from './packageCards.module.scss'; 
 
 const PackageCards = (props) => {
     const { category, imagePath, title, durationInDays, journey, inclusions, startingPrice } = props
