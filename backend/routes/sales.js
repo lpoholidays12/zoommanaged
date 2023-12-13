@@ -1,13 +1,15 @@
-import express from "express"
+import express, { Router } from "express"
 
 import {verifyJwt} from "../middlewares/auth.js"
-import  { getPackages,getPackage } from "../controllers/salesController.js" 
+import  { getPackageList,getPackage,getPackageType } from "../controllers/salesController.js" 
 
 const router = express.Router();
 
 router.use(verifyJwt);
 
-router.get("/package", getPackages);
+router.get("/", getPackageType)
+
+router.get("/:id", getPackageList);
 
 router.get('/package/:id', getPackage)
 
