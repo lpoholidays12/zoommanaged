@@ -1,11 +1,15 @@
-import PackageCards from "../components/Common/PackageCards";
-import Navbar from "../components/Navbar"; 
-import Packages from "./sales/Packages";
+import Navbar from "../components/Navbar";  
+import { useAuthContext } from '../hooks/useAuthContext';
+import PackageCategory from "./sales/PackageCategory";
 
 const Home = () => {
+
+    const { user } = useAuthContext();
+    
     return ( 
         <>
-            <Navbar/>  
+            <Navbar />  
+            <PackageCategory/>
         </>
      );
 }

@@ -1,22 +1,26 @@
 import './navbar.css';
 
-const pageList = [
-    {
-        id: 1,
-        name: "Packages",
-        url: "/packages"
-    },
-    {
-        id: 2,
-        name: "My Bookings",
-        url: "/my-bookings"
-    },
-    {
-        id: 1,
-        name: "Edit Package",
-        url: "/edit-package"
-    }
-]
+const pageList = {
+    sales:[
+        {
+            id: 1,
+            name: "Packages",
+            url: "/packages"
+        },
+        {
+            id: 2,
+            name: "My Bookings",
+            url: "/my-bookings"
+        },
+        {
+            id: 1,
+            name: "Edit Package",
+            url: "/edit-package"
+        }
+
+
+    ]
+}
 
 const Navbar = () => {
     return (
@@ -40,7 +44,7 @@ const Navbar = () => {
                                 <nav className="desktop_nav">
                                     <ul>
                                         {
-                                            pageList.map((item, i) => (
+                                            pageList["sales"].map((item, i) => (
                                                 <li key={i}>
                                                     <a href={item.url}>{item.name}</a>
                                                 </li>

@@ -9,7 +9,7 @@ const loginUser = async (req, res) => {
   var existinguser = await db.query("Select employee_id, password, department_id from employees where name='" + userid + "'")
 
   if (existinguser[0][0] == undefined) {
-    return res.json({ status: "404", message: "User not found" })
+    return res.status(404).json({ error: "User not found" });
   }
   else {
     if (password === existinguser[0][0].password) {

@@ -3,8 +3,7 @@
   max-width: 1200px; /* Set a maximum width if desired */
   margin: 5% auto; /* Center the div horizontally */
   padding: 20px; /* Add padding for better visibility */
-  box-sizing: border-box; /* Include padding in the total width */
-  background-color: aqua;
+  box-sizing: border-box; /* Include padding in the total width */ 
   border: 1px solid black;
   border-radius: 30px;
 }
@@ -84,8 +83,7 @@
   margin-right: 10px; /* Add margin to the right of the image for spacing */
 }
 
-.flex-div {
-  background-color: aqua;
+.flex-div { 
   margin-top: 25px;
   margin-left:80px;
   width: 400px; /* Adjust the width as needed */

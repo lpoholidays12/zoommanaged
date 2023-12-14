@@ -1,18 +1,25 @@
-.table-template-section {
+.bookings {
+  padding: 4em 0;
+  .table-template-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+
   }
 
-.table-template-section table, .table-template-section td, .table-template-section th, .table-template-section caption {
+  .table-template-section table,
+  .table-template-section td,
+  .table-template-section th,
+  .table-template-section caption {
     border: 1px solid #E1E1E1;
     border-collapse: collapse;
     text-align: center;
   }
+
   .table-template-section table {
     width: 100%;
   }
+
   .table-template-section table caption {
     font-size: 1.1em;
     padding: 1em 0em;
@@ -20,23 +27,32 @@
     background-color: #E4E4E4;
     font-weight: 600;
   }
+
   .table-template-section table th {
     padding: 0.5em;
     font-weight: 600;
   }
+
   .table-template-section table td {
     padding: 0.5em;
   }
+
   .table-template-section table .product-groups {
     padding: 0.4em 0.8em;
     font-weight: 500;
   }
-  .table-template-section table tbody:nth-child(even), .table-template-section table thead {
+
+  .table-template-section table tbody:nth-child(even),
+  .table-template-section table thead {
     background-color: #F5F5F5;
-  }/*# sourceMappingURL=contact-us.css.map */
+  }
+
+  /*# sourceMappingURL=contact-us.css.map */
+
+}
 
 
-  /* .sec-nav{  
+/* .sec-nav{  
     height:60px;
     display: flex;
 }

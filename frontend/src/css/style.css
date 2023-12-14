@@ -297,6 +297,17 @@ img:not([src]):not([srcset]) {
     align-items: center;
 }
 
+.error {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('./icons/error-icon.png');
+}
+
 @media (min-width: 767px) {
     .width10 {
         -ms-flex: 0 0 10%;
@@ -487,49 +498,10 @@ img:not([src]):not([srcset]) {
     margin-top: -6.5%;
 }
 
-.web_link {
-    position: relative;
-    border-radius: 15px;
-    margin: 0 5px;
-    overflow: hidden;
-}
-
-.web_link img {
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    width: 100%;
-    min-height: 150px;
-    object-fit: cover;
-    height: 190px;
-    filter: brightness(0.75);
-}
-
-.web_link:hover img {
-    transform: scale(1.1);
-}
-
-.web_link h2,
-.web_link i {
+.loader {
     position: absolute;
-    left: 20px;
-    z-index: 2;
+    top: 50%;
 }
-
-.web_link h2 {
-    font-size: 22px;
-    top: 75%;
-    font-weight: 500;
-    color: white;
-}
-
-.web_link i {
-    bottom: 20px;
-}
-
-.web_link i img {
-    width: 20px;
-}
-
 
 
 .glass-card {
@@ -874,7 +846,7 @@ a.whiteIcon::after {
     margin: 50px auto;
     max-width: 1200px;
     width: 100%;
-    
+
 }
 
 .loginForm form {
@@ -890,7 +862,7 @@ a.whiteIcon::after {
     margin-bottom: 25px;
 }
 
-.loginForm form .form-group label{
+.loginForm form .form-group label {
     color: #555;
     font-size: 14px;
 }
@@ -907,28 +879,30 @@ a.whiteIcon::after {
     border-radius: 3px;
     border: 0;
     color: #fff;
-    cursor: pointer; 
+    cursor: pointer;
     font-size: 16px;
     padding: 15px 45px;
     transition: 0.2s;
 }
+
 .loginForm form .button-login button:hover {
 
-background: #2036de;
+    background: #2036de;
     transform: translateY(-2px);
 }
-.loginForm form .formTitle{
+
+.loginForm form .formTitle {
     text-align: center;
     margin-bottom: 25px;
 }
 
-.loginForm form .formTitle strong{
+.loginForm form .formTitle strong {
     color: #2f2f2f;
     display: block;
     font-size: 40px;
 }
 
-.loginForm form p{
+.loginForm form p {
     color: #2f2f2f;
 }
 
