@@ -1,0 +1,23 @@
+.image-container {
+    display: flex;
+  }
+  
+  .horizontal-image {
+    max-width: 200px; /* Ensure images don't exceed their container width */
+    margin-right: 10px; /* Optional: Add spacing between the images */
+  }
+  /* img{
+    margin: 40px;
+  } */
+
+  .parentDiv1{
+    display: flex;
+  flex-direction: column; /* To stack rows vertically */
+  justify-content: center;
+  align-items: center;
+  }
+   .childDiv {
+    margin: 20px;
+    width: 400px;
+    height: 600px;
+   }
