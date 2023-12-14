@@ -24,7 +24,6 @@ export const useLogin = () => {
             if (!response.ok) {
                 throw new Error(json.error || 'Login failed');
             } 
-            localStorage.setItem('user', JSON.stringify(json));
             login(json);
             
         } catch (error) {
@@ -34,5 +33,5 @@ export const useLogin = () => {
         }
     };
 
-    return { login: loginUser, isLoading, error };
+    return { login:loginUser, isLoading, error };
 };
