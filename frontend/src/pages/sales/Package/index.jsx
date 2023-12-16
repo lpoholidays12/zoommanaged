@@ -24,8 +24,15 @@ function Package() {
 
   async function fetchSubpackage(category_id) {
     try {
-      const response = await axios.get(`http://localhost:5000/api/sales/${category_id}`, { timeout: 10000 });
-      console.log(response.data.packageList);
+      console.log("Before Axios request");
+      console.log(category_id);
+
+      const response = await axios.get(
+        `http://localhost:5000/api/sales/${category_id}`,
+        { timeout: 10000 }
+      );
+
+      // Assuming response.data.packageList contains the subpackage data
       setSubPackageData(response.data.packageList);
     } catch (error) {
       console.error("Error fetching subpackage data:", error.message);
@@ -40,24 +47,27 @@ function Package() {
       ) : (
         <div className="button-container">
           {packageData.map((packageItem) => (
-            <button onClick={() => fetchSubpackage(packageItem.package_id)} key={packageItem.package_id}>
+            <button
+              onClick={() => fetchSubpackage(packageItem.package_id)}
+              key={packageItem.package_id}
+            >
               {packageItem.package_name}
             </button>
           ))}
         </div>
       )}
 
-      {/* Display subPackageData if available */}
-      {subPackageData.length > 0 && (
-        <div>
-          <h2>Subpackages</h2>
-          <ul>
+      <div className="button-container">
+        {subPackageData.length > 0 && (
+          <div>
             {subPackageData.map((subPackageItem) => (
-              <li key={subPackageItem.id}>{subPackageItem.name}</li>
+              <button key={subPackageItem.subPkg_id}>
+                {subPackageItem.subPkg_name}
+              </button>
             ))}
-          </ul>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
