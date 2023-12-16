@@ -69,6 +69,7 @@ const Bookings = () => {
                 <th>Name</th>
                 <th>Package</th>
                 <th>Date</th>
+                <th>Edit</th>
                 {/* {data.user.department !== "Sales" && <th>Edit</th>} */}
               </tr>
             </thead>
