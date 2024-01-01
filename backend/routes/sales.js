@@ -5,7 +5,7 @@ import  { getPackageList,getPackage,getPackageType } from "../controllers/salesC
 
 const router = express.Router();
 
-router.use(verifyJwt);
+// router.use(verifyJwt);
 
 router.get("/", getPackageType)
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../../../components/Navbar";
+import Form from "../PackageDetails";
+
 import "./Package.css";
 
 function Package() {
@@ -24,24 +26,26 @@ function Package() {
 
   async function fetchSubpackage(category_id) {
     try {
-      console.log("Before Axios request");
-      console.log(category_id);
 
       const response = await axios.get(
         `http://localhost:5000/api/sales/${category_id}`,
         { timeout: 10000 }
       );
 
-      // Assuming response.data.packageList contains the subpackage data
       setSubPackageData(response.data.packageList);
     } catch (error) {
       console.error("Error fetching subpackage data:", error.message);
     }
   }
 
+  // async function displayForm(packageName){
+  //     const packageName = 
+  // }
+
   return (
     <div>
       <Navbar />
+      
       {packageData.length === 0 ? (
         <p>No data</p>
       ) : (
@@ -61,12 +65,15 @@ function Package() {
         {subPackageData.length > 0 && (
           <div>
             {subPackageData.map((subPackageItem) => (
-              <button key={subPackageItem.subPkg_id}>
+              <button onClick={() => displayForm(subPackageItem.subPkg_name)} key={subPackageItem.subPkg_id}>
                 {subPackageItem.subPkg_name}
               </button>
             ))}
           </div>
         )}
+      </div>
+      <div>
+        <Form/>
       </div>
     </div>
   );
